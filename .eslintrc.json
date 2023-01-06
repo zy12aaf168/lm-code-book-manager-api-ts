@@ -1,11 +1,18 @@
 {
-    "extends": ["eslint:recommended", "google"],
-    "rules": {
-        "max-len": ["error", { "code": 150 }]
-    },
-    "env": {
-        "node": true,
-        "jest": true
-    },
-    "parserOptions": { "ecmaVersion": 2018 }
+	"root": true,
+	"ignorePatterns": ["**/*"],
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+			"rules": {}
+		},
+		{
+			"files": ["*.ts", "*.tsx"],
+			"rules": {}
+		},
+		{
+			"files": ["*.js", "*.jsx"],
+			"rules": {}
+		}
+	]
 }
