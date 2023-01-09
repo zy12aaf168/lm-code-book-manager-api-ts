@@ -1,4 +1,4 @@
-import { Book, BookType } from "../models/book";
+import { Book } from "../models/book";
 
 export const getBooks = async () => {
 	return Book.findAll();
@@ -10,14 +10,12 @@ export const getBook = async (bookId: number) => {
 	});
 };
 
-export const saveBook = async (book: BookType) => {
-	// TODO: fix this!
-	// @ts-ignore
-	return Book.create(book);
+export const saveBook = async (book: Book) => {
+	return Book.create<Book>(book);
 };
 
 // User Story 4 - Update Book By Id Solution
-export const updateBook = async (bookId: number, book: BookType) => {
+export const updateBook = async (bookId: number, book: Book) => {
 	return Book.update(book, {
 		where: {
 			bookId,
