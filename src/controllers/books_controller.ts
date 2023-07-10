@@ -35,3 +35,15 @@ export const updateBook = async (req: Request, res: Response) => {
 	const book = await bookService.updateBook(bookId, bookUpdateData);
 	res.status(204).json(book);
 };
+
+export const deleteBook = async (req: Request, res: Response) => {
+	const bookId = Number.parseInt(req.params.bookId);
+	try{
+		const bookDeleted = await bookService.deleteBook(bookId);
+		if(bookDeleted){
+			res.status(200).json()
+		}
+	} catch(error){
+		res.status(400).json({message: error})
+	}
+}
